@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
+		<title>个人平台即时通讯系统</title>
+		
+		<script src="js/socket.io.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<!-- 最新版本的socket.io核心 js 文件 -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		
+		<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		
+		
+		
+		
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<header>
+			<div class="page-header">
+				<h1>个人平台即时通讯系统<small>www.666.com</small></h1>
+			</div>
+		</header>
+		<section class="row-fluid chat">
+			<aside class="chatList col-lg-2">
+				<ul class="list-group" id="selectList">
+					<li class="list-group-item RoomPublic selectListActive" id="RoomPublic">
+						<span class="badge"></span><span class="selectListName">公共聊天室</span>
+					</li>
+				</ul>
+			</aside>
+			<section class="col-lg-6 chatRoomBox">
+				<ul class="chatRoomList">
+					<li class="chatRoom RoomPublic">
+						<div class="title">公共聊天室</div>
+						<div class="chatMessageBox">
+							<ul class="chatMessage">
+								<li class='systemInfo_join'>欢迎加入公共聊天室</li>
+							</ul>
+						</div>
+						<div class="chatMessageInputBox">
+							<textarea id="txtRoomPublic" class="chatMessageInput" autocomplete="off" onkeydown="if (event.ctrlKey && event.which == 13){emit(this.id);}"></textarea>
+							<button class="send btn">发送</button>
+							<span class="systemInfoInput">
+								Ctrl &nbsp; +&nbsp; Enter
+							</span>
+						</div>
+					</li>
+				</ul>
+			</section>
+		</section>
+		<aside>
+
+		</aside>
+		<footer>
+
+		</footer>
+		<!--模板区域-->
+		<div id="temp" class="hide">
+			<li>
+				<img class="col-lg-1 userAvatar" src="img/zjjs_01.jpg" width="35" height="35" />
+
+				<div class="col-lg-9">
+					<div class="label label-success username ">
+						其他人发送的
+					</div>
+					<br />
+					<div class="msg">
+						其他人发送的
+					</div>
+
+				</div>
+				<div class="clearfix">
+
+				</div>
+			</li>
+		</div>
+		<div id="MyMessageTemp" class="hide">
+			<li>
+
+				<img class="col-lg-1 MyUserAvatar" src="img/zjjs_01.jpg" width="35" height="35" />
+
+				<div class="MyMessage">
+					自己发送的
+				</div>
+				<span class="col-lg-3 MyMessageStatus">正在发送</span>
+				<div class="clearfix">
+
+				</div>
+			</li>
+		</div>
+		<div id="selectListTemp" class="hidden">
+			<li class="list-group-item">
+				<span class="selectListName">测试</span>
+				<span class="badge">123</span>
+			</li>
+		</div>
+		<div id="chatRoomTemp" class="hide">
+			<li class="chatRoom hide">
+				<div class="title">标题</div>
+				<div class="chatMessageBox">
+					<ul class="chatMessage">
+						<!--<li class='systemInfo_join'>欢迎加入公共聊天室</li>-->
+					</ul>
+				</div>
+				<div class="chatMessageInputBox">
+					<textarea id="txtRoomPublic" class="chatMessageInput" autocomplete="off" onkeydown="if (event.ctrlKey && event.which == 13){emit(this.id);}"></textarea>
+					<button class="send btn">发送</button>
+					<span class="systemInfoInput">
+						Ctrl &nbsp;&nbsp;&nbsp; +&nbsp;&nbsp;&nbsp; Enter
+					</span>
+				</div>
+			</li>
+		</div>
+	</body>
+
+</html>

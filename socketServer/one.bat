@@ -1,0 +1,1 @@
+@echo 正在配置环境 && npm install && @echo 安装完成 && pause 
